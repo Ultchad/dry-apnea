@@ -10,4 +10,4 @@ To [ChatGPT](https://chat.openai.com) for help, because i'm not a good dev
 
 ## License
 
-[License](https://github.com/Ultchad/dry-apnea/blob/main/LICENSE
+[License](https://github.com/Ultchad/dry-apnea/blob/main/LICENSE)
