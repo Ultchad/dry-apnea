@@ -3,6 +3,7 @@ const selectLanguage = document.getElementById("language-selector");
 const selectDuration = document.getElementById("duration-select");
 const textDuration = document.getElementById("duration-text");
 const startButton = document.getElementById("start-button");
+const switchTheme = document.getElementById("switchTheme");
 const cycleTitle = document.getElementById("cycle-title");
 const timer = document.getElementById("timer");
 const stageTimer = document.getElementById("stage-timer");
@@ -15,6 +16,7 @@ let lang = "fr"
 const languageTitle = document.getElementById("title");
 const languageCycle = document.getElementById("label-cycle-select");
 const languageDuration = document.getElementById("label-duration-select");
+const m = document.getElementById('body');
 
 
 startButton.addEventListener("click", () => {
@@ -138,6 +140,10 @@ selectElement.addEventListener("change", () => {
 
 selectDuration.addEventListener("change", () => {
     showDuration();
+})
+
+switchTheme.addEventListener("click", () => {
+    changeTheme()
 })
 
 const languages = {
@@ -515,5 +521,45 @@ for (i in exercises){
     selectElement.appendChild(node)
 };
 
+const changeTheme = (fromBrowser=false) => {
+    let toDark = false
+    if (fromBrowser){
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        toDark = darkThemeMq.matches
+    } else {
+        if ( m.classList.contains('bg-light') ){
+            toDark = true
+        }         
+    }
+    
+    
+    if (toDark) {
+        // Switch to dark theme
+        m.classList.remove('bg-light');
+        m.classList.remove('text-dark');
+        m.classList.add('bg-dark');
+        m.classList.add('text-light');
+        switchTheme.classList.remove('btn-light');
+        switchTheme.classList.add('btn-dark');
+        switchTheme.children[0].classList.remove('bi-moon-fill');
+        switchTheme.children[0].classList.add('bi-moon');
+        selectLanguage.classList.remove('btn-light');
+        selectLanguage.classList.add('btn-dark');
+    } else {
+        // Switch to light theme
+        m.classList.remove('bg-dark');
+        m.classList.remove('text-light');
+        m.classList.add('bg-light');
+        m.classList.add('text-dark');        
+        switchTheme.classList.remove('btn-dark');
+        switchTheme.classList.add('btn-light');
+        switchTheme.children[0].classList.remove('bi-moon');
+        switchTheme.children[0].classList.add('bi-moon-fill');        
+        selectLanguage.classList.remove('btn-dark');
+        selectLanguage.classList.add('btn-light');
+    }
+}
+
 showLanguage();
 showDuration();
+changeTheme(fromBrowser=true);
