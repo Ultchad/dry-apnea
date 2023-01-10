@@ -2,7 +2,7 @@
 
 ## Description
 
-[dry-apnea](https://Ultchad.github.io/dry-apnea) - Little github page for help me with dry apnea exercise
+[dry-apnea](https://Ultchad.github.io/dry-apnea) - Little github page for help with dry apnea exercise
 
 ## Thanks
 
