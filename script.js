@@ -168,9 +168,9 @@ const languages = {
         "startButton": "Iniciar el ejercicio",
         "tasks": {
             "full_inhalation": "Inspiración completa",
-            "full_apnea": "Apnnea completa",
+            "full_apnea": "Apnea completa",
             "normal_exhalation": "Exhalación normal",
-            "empty_apnea": "Apnnea vacía"
+            "empty_apnea": "Apnea vacía"
         }
     },
     "en" : {
